@@ -1,3 +1,14 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "http://glim-midnight.pages.dev"
+languageCode = "en-us"
+theme = "glim-midnight"
+
+[params]
+    title = "The Plot"
+    phrases = ["I wonder what else would it take us", "To make you see how fucked we are", "There won't be no divine intervention", "No super heroes are on sight."]
+    links = [
+    {name = "Spotify", url = ""},
+    {name = "Tidal", url = ""},
+    {name = "YouTube", url = ""},
+    {name = "Apple Music", url = ""},
+    ]
+    background = "bg.mp4"
