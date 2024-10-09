@@ -13,7 +13,7 @@
                     <div class='contenthead'>
                         <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
                         <sub>{{ .Site.Params.subtitle }}</sub>
-                        <img class="cover" src="/images/{{ .Site.Params.cover }}">
+                        {{- partial "player.html" . -}}
                     </div>
                     <div class='contenttypewritter animatedText'></div>
                     <div class='contentbtn'>

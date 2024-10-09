@@ -73,10 +73,33 @@
     background-color: #fff;
 }
 
-.cover {
-    margin: 20px;
-    height: 400px;
+.player
+{
     width: 400px;
+    #background: #fff;
+    margin: 20px;
+    padding: 5px 10px 20px 10px;
+    border: none;
+    box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
+    -webkit-box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
+    -moz-box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
+}
+
+.imgBx img
+{
+    width: 100%;
+    height: auto;
+    border: none;
+    padding: 20px;
+}
+
+.player audio
+{
+    width: 100%;
+    border-radius: 6px;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 /* Responsive */
@@ -88,7 +111,7 @@
 }
 
 @media screen AND (max-width: 400px) {
-    .cover {
+    .player {
         width: auto;
     }
 }
