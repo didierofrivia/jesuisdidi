@@ -5,6 +5,11 @@
     font-family: "Noto Sans Mono", monospace;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 .mainbg {
     height: auto;
 }

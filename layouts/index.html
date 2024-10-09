@@ -12,7 +12,7 @@
                 <div>
                     <div class='contenthead'>
                         <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
-                        <sub>{{ .Site.Params.subtitle }}</sub>
+                        <sub><a href="{{ .Site.Params.sublink }}" target="_blank">{{ .Site.Params.subtitle }}</a></sub>
                         {{- partial "player.html" . -}}
                     </div>
                     <div class='contenttypewritter animatedText'></div>
@@ -46,7 +46,7 @@
             <div>
                 <div class='contenthead'>
                     <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
-                    <sub>{{ .Site.Params.subtitle }}</sub>
+                    <sub><a href="{{ .Site.Params.sublink }}" target="_blank">{{ .Site.Params.subtitle }}</a></sub>
                     {{- partial "player.html" . -}}
                 </div>
                 <div class='contenttypewritter animatedText'></div>
