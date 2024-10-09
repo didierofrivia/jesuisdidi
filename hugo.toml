@@ -4,7 +4,9 @@ theme = "glim-midnight"
 
 [params]
     title = "The Plot"
-    phrases = ["I wonder what else would it take us", "To make you see how fucked we are", "There won't be no divine intervention", "No super heroes are on sight."]
+    subtitle = "by Didi Di Cesare"
+    cover = "the_plot_1000x1000.png"
+    phrases = ["I wonder what else would it take us", "To make you see how fucked we are", "There won't be no divine intervention", "And no super heroes are on sight", "Everyone is too afraid to fight."]
     links = [
     {name = "Spotify", url = ""},
     {name = "Tidal", url = ""},
