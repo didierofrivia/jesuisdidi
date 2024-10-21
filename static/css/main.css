@@ -59,6 +59,10 @@ a {
     width: 100%;
 }
 
+.contentbtn {
+    margin: 20px 0 0 0;
+}
+
 /* Style for both button and anchor */
 .contentbtn button,
 .contentbtn a {
