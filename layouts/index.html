@@ -9,12 +9,9 @@
                 <li class="item">
                     <div class='contenthead'>
                         <h3 class='contentheading'>{{ .Title }}</h3>
-                        <div class="frame">
-                            <a href="{{ .Permalink }}" class="imgBx">
-                                <img class="cover" src="/images/{{ .Params.cover }}" alt="{{ .Params.title }}">
-                            </a>
-                        </div>
+                        {{- partial "frame.html" . -}}
                     </div>
+                    {{- partial "typewriter.html" .Params -}}
                 </li>
             {{ end }}
         {{ end }}

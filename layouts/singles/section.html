@@ -1,34 +1,15 @@
 {{ define "main"}}
-    <div>
-        <div class='mainbg'>
-            <video autoplay muted loop>
-                {{ if .Site.Params.background }}
-                <source src="{{ .Site.Params.background | absURL }}" type="video/mp4">
-            {{ else }}
-                <source src={{ "bg.mp4" | absURL }} type="video/mp4">
-            {{ end }}
-            </video>
-            <section class="singles">
-                <ul class="collection">
-                {{ range .Pages }}
-                    <li class="item">
-                        <div class='contenthead'>
-                            <h3 class='contentheading'>{{ .Title }}</h3>
-                            <div class="frame">
-                                <a href="{{ .Permalink }}" class="imgBx">
-                                    <img class="cover" src="/images/{{ .Params.cover }}" alt="{{ .Params.title }}">
-                                </a>
-                            </div>
-                        </div>
-                        <div id="single-{{ .Params.id  }}" class='contenttypewritter animatedText'></div>
-                        <!-- JS for typewritter -->
-                        <script>
-                            typeJs({{ .Params.phrases | jsonify | safeJS }}, "#single-{{ .Params.id  }}")
-                        </script>
-                    </li>
-                {{ end }}
-                </ul>
-            </section>
-        </div>
-    </div>
+    <section class="singles">
+        <ul class="collection">
+        {{ range .Pages }}
+            <li class="item">
+                <div class='contenthead'>
+                    <h3 class='contentheading'>{{ .Title }}</h3>
+                    {{- partial "frame.html" .Params -}}
+                </div>
+                {{- partial "typewriter.html" .Params -}}
+            </li>
+        {{ end }}
+        </ul>
+    </section>
 {{ end }}
