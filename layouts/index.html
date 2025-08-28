@@ -1,4 +1,5 @@
 {{ define "main"}}
+<script src='/js/script.js'></script>
     <div>
         <div class='mainbg'>
             <video autoplay muted loop>
@@ -8,60 +9,31 @@
                 <source src="bg.mp4" type="video/mp4">
             {{ end }}
             </video>
-            <div class='content'>
-                <div>
-                    <div class='contenthead'>
-                        <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
-                        <sub><a href="{{ .Site.Params.sublink }}" target="_blank">{{ .Site.Params.subtitle }}</a></sub>
-                        {{- partial "player.html" . -}}
-                    </div>
-                    <div class='contenttypewritter animatedText'></div>
-                    <div class='contentbtn'>
-                        {{ range .Site.Params.links }}
-                          <a href="{{ .url }}" class='btn btn-outline-light' role='button' target="_blank">{{ .name }}</a>
-                        {{ end }}
-                        <a href="#" class='btn btn-outline-light' role='button'>More soon</a>
-                      </div>
-                </div>
-            </div>
+            <section class="intro">
+
+            </section>
+            <section class="singles">
+                <ul class="collection">
+                {{ range .Site.Data.singles }}
+                    <li class="item">
+                        <div class='contenthead'>
+                            <h3 class='contentheading'>{{ .title }}</h3>
+                            {{- partial "player.html" . -}}
+                        </div>
+                        <div id="single-{{ .id  }}" class='contenttypewritter animatedText'></div>
+                        <!-- JS for typewritter -->
+                        <script>
+                            typeJs({{ .phrases | jsonify | safeJS }}, "#single-{{ .id  }}")
+                        </script>
+                        <ul class="contentbtn">
+                            {{ range .links }}
+                               <li><a href="{{ .url }}" class='btn btn-outline-light' role='button' target="_blank">{{ .name }}</a></li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                {{ end }}
+            </ul>
+            </section>
         </div>
     </div>
-
-    <!-- JS for typewritter -->
-    <script>
-        const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
-    </script>
-    <script src='/js/script.js'></script>
-{{ end }}
-{{ define "soon"}}
-<div>
-    <div class='mainbg'>
-        <video autoplay muted loop>
-            {{ if .Site.Params.background }}
-            <source src="{{ .Site.Params.background }}" type="video/mp4">
-            {{ else }}
-            <source src="bg.mp4" type="video/mp4">
-            {{ end }}
-        </video>
-        <div class='content'>
-            <div>
-                <div class='contenthead'>
-                    <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
-                    <sub><a href="{{ .Site.Params.sublink }}" target="_blank">{{ .Site.Params.subtitle }}</a></sub>
-                    {{- partial "player.html" . -}}
-                </div>
-                <div class='contenttypewritter animatedText'></div>
-                <div class="soon">
-                    <p>Coming Soon!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- JS for typewritter -->
-<script>
-    const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
-</script>
-<script src='/js/script.js'></script>
 {{ end }}
