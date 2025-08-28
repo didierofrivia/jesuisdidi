@@ -22,12 +22,14 @@ a {
     z-index: -1;
 }
 
-.content {
+.collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
     padding-bottom: 5%;
     padding-top: 8%;
 }
 
-.content div {
+.collection .item {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -35,6 +37,7 @@ a {
     align-items: center;
     text-align: center;
     color: white;
+    list-style: none;
 }
 
 .contenthead {
@@ -61,6 +64,7 @@ a {
 
 .contentbtn {
     margin: 20px 0 0 0;
+    list-style-type: none;
 }
 
 /* Style for both button and anchor */
