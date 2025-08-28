@@ -22,14 +22,17 @@ a {
     z-index: -1;
 }
 
-.collection {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+.collection, .content {
     padding-bottom: 5%;
     padding-top: 8%;
 }
 
-.collection .item {
+.collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+}
+
+.collection .item, .content div {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -86,7 +89,7 @@ a {
     background-color: #fff;
 }
 
-.player
+.player, .frame
 {
     width: 400px;
     #background: #fff;
@@ -96,6 +99,12 @@ a {
     box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
     -webkit-box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
     -moz-box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
+}
+
+.frame:hover {
+    box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -webkit-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -moz-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
 }
 
 .imgBx img

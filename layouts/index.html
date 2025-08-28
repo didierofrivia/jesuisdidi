@@ -1,39 +1,23 @@
 {{ define "main"}}
-<script src='/js/script.js'></script>
-    <div>
-        <div class='mainbg'>
-            <video autoplay muted loop>
-                {{ if .Site.Params.background }}
-                <source src="{{ .Site.Params.background }}" type="video/mp4">
-            {{ else }}
-                <source src="bg.mp4" type="video/mp4">
-            {{ end }}
-            </video>
-            <section class="intro">
+    <section class="intro">
 
-            </section>
-            <section class="singles">
-                <ul class="collection">
-                {{ range .Site.Data.singles }}
-                    <li class="item">
-                        <div class='contenthead'>
-                            <h3 class='contentheading'>{{ .title }}</h3>
-                            {{- partial "player.html" . -}}
+    </section>
+    <section class="singles">
+        <ul class="collection">
+        {{ with $.Site.GetPage "/singles" }}
+            {{ range .Pages }}
+                <li class="item">
+                    <div class='contenthead'>
+                        <h3 class='contentheading'>{{ .Title }}</h3>
+                        <div class="frame">
+                            <a href="{{ .Permalink }}" class="imgBx">
+                                <img class="cover" src="/images/{{ .Params.cover }}" alt="{{ .Params.title }}">
+                            </a>
                         </div>
-                        <div id="single-{{ .id  }}" class='contenttypewritter animatedText'></div>
-                        <!-- JS for typewritter -->
-                        <script>
-                            typeJs({{ .phrases | jsonify | safeJS }}, "#single-{{ .id  }}")
-                        </script>
-                        <ul class="contentbtn">
-                            {{ range .links }}
-                               <li><a href="{{ .url }}" class='btn btn-outline-light' role='button' target="_blank">{{ .name }}</a></li>
-                            {{ end }}
-                        </ul>
-                    </li>
-                {{ end }}
-            </ul>
-            </section>
-        </div>
-    </div>
+                    </div>
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+    </section>
 {{ end }}
