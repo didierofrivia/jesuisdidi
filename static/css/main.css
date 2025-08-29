@@ -10,6 +10,25 @@ a {
     text-decoration: none;
 }
 
+h2 {
+    font-family: inherit;
+    margin: 0%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    text-shadow: 0 0 3px #fff;
+    color:#ddd
+}
+
+  main {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+  }
+
+
 .mainbg {
     height: auto;
 }
@@ -22,12 +41,18 @@ a {
     z-index: -1;
 }
 
-.content {
+.collection, .content {
     padding-bottom: 5%;
     padding-top: 8%;
 }
 
-.content div {
+.collection {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+}
+
+.collection .item, .content div {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -35,16 +60,16 @@ a {
     align-items: center;
     text-align: center;
     color: white;
+    list-style: none;
 }
 
 .contenthead {
-    padding: 3px;
+    padding: 2rem 0;
 }
 
 .contentheading, .soon {
     font-family: inherit;
     margin: 0%;
-    padding: 5px;
     display: flex;
     justify-content: center;
     font-size: 20px;
@@ -61,6 +86,7 @@ a {
 
 .contentbtn {
     margin: 20px 0 0 0;
+    list-style-type: none;
 }
 
 /* Style for both button and anchor */
@@ -82,16 +108,21 @@ a {
     background-color: #fff;
 }
 
-.player
+.player, .frame
 {
     width: 400px;
-    #background: #fff;
     margin: 20px;
     padding: 5px 10px 20px 10px;
     border: none;
     box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
     -webkit-box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
     -moz-box-shadow: 10px 2px 90px -11px rgba(13,100,76,0.75);
+}
+
+.frame:hover {
+    box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -webkit-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -moz-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
 }
 
 .imgBx img
@@ -111,10 +142,142 @@ a {
     border: none;
 }
 
+#topBar {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:1rem 0;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+    position:sticky;      /* stick to top while scrolling   */
+    top:0;
+    z-index:1000;         /* stay above page content       */
+    transition:all .1s ease;  /* smooth shrink/expand */
+}
+
+#topBar .avatar:hover {
+     box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -webkit-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -moz-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+}
+/* The circular avatar container */
+#topBar  .avatar {
+    width: 250px;               /* size of the circle */
+    height: 250px;
+    border-radius: 50%;        /* makes it a perfect circle */
+    overflow: hidden;          /* hide anything outside the circle */
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    margin-bottom:.8rem;
+    transition:width .3s,height .3s,margin .3s;
+}
+
+#topBar .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* keep aspect ratio, fill the circle */
+    display: block;
+}
+
+  /* Optional name / caption under the avatar */
+#topBar .caption {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #eb598c;
+  }
+
+  /* Container for the streaming‑service icons/links */
+#topBar .streaming-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+#topBar .streaming-links a {
+    text-decoration: none;
+    /*color: #555;*/
+    font-size: 0.9rem;
+  }
+
+  #topBar .streaming-links a:hover {
+    color: #ddd;
+  }
+
+  #topBar.scrolled {
+    flex-direction:row;           /* horizontal layout */
+    justify-content:space-between;
+    padding:0.4rem 1rem;
+    background-color: #000;
+  }
+
+  #topBar.scrolled .avatar{
+    width:45px; height:45px;      /* tiny circle */
+    margin:0;
+  }
+
+  #topBar.scrolled .caption{
+    font-size:0;                  /* hide caption */
+  }
+
+  #topBar.scrolled .streaming-links{
+    margin:0;
+  }
+
+  #topBar.scrolled .streaming-links a{
+    font-size:0.85rem;
+  }
+
+  .site-footer {
+  background:#000;
+  padding:2rem;
+  font-size:0.95rem;
+}
+
+/* Inner wrapper to keep the width consistent with the rest of the page */
+.footer-inner {
+  max-width:960px;
+  margin:auto;
+  text-align:center;
+  padding: 3em 0;
+}
+
+/* Description / tagline */
+.footer-description {
+  margin:0 0 1rem;
+  line-height:1.5;
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* Social‑media list – horizontal, icons only */
+.social-list {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  justify-content:center;
+  gap:1.5rem;
+}
+
+/* Links – keep the icons white, enlarge a little on hover */
+.social-list a {
+  color:#ddd;
+  background-color: #ddd;
+  display:inline-block;
+  transition:color .2s, transform .2s;
+}
+.social-list a:hover {
+  color:#fff;
+  transform:scale(1.1);
+}
+
+/* SVG icons – size and inherit the link color */
+.icon {
+  width:24px;
+  height:24px;
+}
+
 /* Responsive */
 @media screen AND (max-width: 700px) {
     .mainbg {
-        height: 100vh !important;
+        /*height: 100vh !important;*/
     }
 
 }
@@ -122,5 +285,12 @@ a {
 @media screen AND (max-width: 400px) {
     .player {
         width: auto;
+    }
+}
+
+@media screen AND (max-width: 599px) {
+    .collection {
+        display: block;
+        padding: 0;
     }
 }

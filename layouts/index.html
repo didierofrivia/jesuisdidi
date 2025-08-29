@@ -1,67 +1,18 @@
 {{ define "main"}}
-    <div>
-        <div class='mainbg'>
-            <video autoplay muted loop>
-                {{ if .Site.Params.background }}
-                <source src="{{ .Site.Params.background }}" type="video/mp4">
-            {{ else }}
-                <source src="bg.mp4" type="video/mp4">
+    <main class="singles">
+        <h2>Singles</h2>
+        <ul class="collection">
+            {{ with $.Site.GetPage "/singles" }}
+                {{ range sort .Pages  "File.Path" "desc" }}
+                    <li class="item">
+                        <div class='contenthead'>
+                            <h3 class='contentheading'>{{ .Title }}</h3>
+                            {{- partial "frame.html" . -}}
+                        </div>
+                        {{- partial "typewriter.html" .Params -}}
+                    </li>
+                {{ end }}
             {{ end }}
-            </video>
-            <div class='content'>
-                <div>
-                    <div class='contenthead'>
-                        <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
-                        <sub><a href="{{ .Site.Params.sublink }}" target="_blank">{{ .Site.Params.subtitle }}</a></sub>
-                        {{- partial "player.html" . -}}
-                    </div>
-                    <div class='contenttypewritter animatedText'></div>
-                    <div class='contentbtn'>
-                        {{ range .Site.Params.links }}
-                          <a href="{{ .url }}" class='btn btn-outline-light' role='button' target="_blank">{{ .name }}</a>
-                        {{ end }}
-                        <a href="#" class='btn btn-outline-light' role='button'>More soon</a>
-                      </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JS for typewritter -->
-    <script>
-        const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
-    </script>
-    <script src='/js/script.js'></script>
-{{ end }}
-{{ define "soon"}}
-<div>
-    <div class='mainbg'>
-        <video autoplay muted loop>
-            {{ if .Site.Params.background }}
-            <source src="{{ .Site.Params.background }}" type="video/mp4">
-            {{ else }}
-            <source src="bg.mp4" type="video/mp4">
-            {{ end }}
-        </video>
-        <div class='content'>
-            <div>
-                <div class='contenthead'>
-                    <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
-                    <sub><a href="{{ .Site.Params.sublink }}" target="_blank">{{ .Site.Params.subtitle }}</a></sub>
-                    {{- partial "player.html" . -}}
-                </div>
-                <div class='contenttypewritter animatedText'></div>
-                <div class="soon">
-                    <p>Coming Soon!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- JS for typewritter -->
-<script>
-    const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
-</script>
-<script src='/js/script.js'></script>
+        </ul>
+</main>
 {{ end }}

@@ -4,17 +4,17 @@ theme = "glim-midnight"
 
 [params]
     headtitle = "Je Suis Didi"
-    title = "The Plot"
-    subtitle = "by Didi Di Cesare"
-    sublink = "https://mastodon.online/@didierofrivia"
-    cover = "the_plot_1000x1000.png"
-    demo = "the-plot-demo.mp3"
-    phrases = ["I wonder what else would it take us", "To make you see how fucked we are", "There won't be no divine intervention", "And no super heroes are on sight", "Everyone is too afraid to fight."]
-    links = [
-    {name = "Spotify", url = "https://open.spotify.com/track/7zCxTXk6yjWj6n0M0ZlvHB?si=8dc36c768a9146ed"},
-    {name = "Tidal", url = "https://tidal.com/browse/album/394014794"},
-    {name = "Deezer", url = "https://deezer.page.link/MRbGCrPwveQYFdMY9"},
-    {name = "Apple Music", url = "https://music.apple.com/us/album/the-plot-single/1774559721"},
-    {name = "YouTube Music", url = "https://music.youtube.com/playlist?list=OLAK5uy_lpSAyGpDFBaKmM5XZok-5IyLG2vVySxfY"},
+    title = "Didi Di Cesare"
+    socialLinks = [
+        {name = "Mastodon", url="https://mastodon.online/@didierofrivia", icon="mastodon.svg"},
+    ]
+    avatar = "dd-avatar-01.jpeg"
+    about = "A mostly nice human being, attempting to create, while this late age of surveillance capitalism wants to enslave us into consumerism."
+    streamingLinks = [
+        {name = "Tidal", url = "https://tidal.com/browse/artist/51199476"},
+        {name = "Spotify", url = "https://open.spotify.com/artist/1N8ts2Tb3LHeXFtlw0Bi3y"},
+        {name = "Deezer", url = "https://www.deezer.com/en/artist/286543721"},
+        {name = "Apple Music", url = "https://music.apple.com/us/artist/didi-di-cesare/1774558919"},
+        {name = "YouTube Music", url = "https://music.youtube.com/channel/UCZ5jWAYZ2AqNV02ZPooPwfQ"},
     ]
     background = "bg.mp4"

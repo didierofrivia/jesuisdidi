@@ -1,0 +1,15 @@
+{{ define "main"}}
+    <main class="singles">
+        <ul class="collection">
+        {{ range .Pages }}
+            <li class="item">
+                <div class='contenthead'>
+                    <h3 class='contentheading'>{{ .Title }}</h3>
+                    {{- partial "frame.html" .Params -}}
+                </div>
+                {{- partial "typewriter.html" .Params -}}
+            </li>
+        {{ end }}
+        </ul>
+    </main>
+{{ end }}

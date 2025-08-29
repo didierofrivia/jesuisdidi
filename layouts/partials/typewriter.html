@@ -1,0 +1,5 @@
+<div id="single-{{ .id  }}" class='contenttypewritter animatedText'></div>
+<!-- JS for typewritter -->
+<script>
+    typeJs({{ .phrases | jsonify | safeJS }}, "#single-{{ .id  }}")
+</script>

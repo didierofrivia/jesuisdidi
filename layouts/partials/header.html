@@ -1,0 +1,12 @@
+<header id="topBar">
+    <div class="avatar">
+        <a href="/"><img src="/images/{{ .Site.Params.avatar }}" alt="dd"></a>
+    </div>
+    <div class="caption">{{ .Site.Params.title }}</div>
+
+    <div class="streaming-links">
+        {{ range .Site.Params.streamingLinks }}
+            <a href="{{ .url }}" target="_blank">{{ .name }}</a>    
+        {{ end }}
+    </div>
+</header>

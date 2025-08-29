@@ -1,8 +1,10 @@
 <div class="player">
     <div class="imgBx">
-        <img class="cover" src="/images/{{ .Site.Params.cover }}" alt="{{ .Site.Params.title }}">
+        <img class="cover" src="/images/{{ .cover }}" alt="{{ .title }}">
     </div>
+    {{ if .demo }}
     <audio controls>
-        <source src="/audio/{{ .Site.Params.demo }}" type="audio/mpeg">
+        <source src="/audio/{{ .demo }}" type="audio/mpeg">
     </audio>
+    {{ end }}
 </div>
