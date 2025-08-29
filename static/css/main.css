@@ -21,8 +21,11 @@ h2 {
 }
 
   main {
-    padding: 4rem 1rem;
-    line-height: 1.6;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
   }
 
 
@@ -45,6 +48,7 @@ h2 {
 
 .collection {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
 }
 
@@ -60,13 +64,12 @@ h2 {
 }
 
 .contenthead {
-    padding: 3px;
+    padding: 2rem 0;
 }
 
 .contentheading, .soon {
     font-family: inherit;
     margin: 0%;
-    padding: 5px;
     display: flex;
     justify-content: center;
     font-size: 20px;
@@ -223,7 +226,7 @@ h2 {
 
   .site-footer {
   background:#000;
-  padding:2rem 0;
+  padding:2rem;
   font-size:0.95rem;
 }
 
@@ -274,7 +277,7 @@ h2 {
 /* Responsive */
 @media screen AND (max-width: 700px) {
     .mainbg {
-        height: 100vh !important;
+        /*height: 100vh !important;*/
     }
 
 }
@@ -282,5 +285,12 @@ h2 {
 @media screen AND (max-width: 400px) {
     .player {
         width: auto;
+    }
+}
+
+@media screen AND (max-width: 599px) {
+    .collection {
+        display: block;
+        padding: 0;
     }
 }

@@ -3,7 +3,7 @@
         <h2>Singles</h2>
         <ul class="collection">
             {{ with $.Site.GetPage "/singles" }}
-                {{ range .Pages }}
+                {{ range sort .Pages  "File.Path" "desc" }}
                     <li class="item">
                         <div class='contenthead'>
                             <h3 class='contentheading'>{{ .Title }}</h3>

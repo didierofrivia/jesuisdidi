@@ -1,5 +1,5 @@
 ---
-title: "Shade Of Blue"
+title: "Shade of Blue"
 params:
     id: "shade-of-blue"
     cover: "coming_soon_1000x1000.png"
