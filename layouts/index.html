@@ -1,20 +1,18 @@
 {{ define "main"}}
-    <section class="intro">
-
-    </section>
-    <section class="singles">
+    <main class="singles">
+        <h2>Singles</h2>
         <ul class="collection">
-        {{ with $.Site.GetPage "/singles" }}
-            {{ range .Pages }}
-                <li class="item">
-                    <div class='contenthead'>
-                        <h3 class='contentheading'>{{ .Title }}</h3>
-                        {{- partial "frame.html" . -}}
-                    </div>
-                    {{- partial "typewriter.html" .Params -}}
-                </li>
+            {{ with $.Site.GetPage "/singles" }}
+                {{ range .Pages }}
+                    <li class="item">
+                        <div class='contenthead'>
+                            <h3 class='contentheading'>{{ .Title }}</h3>
+                            {{- partial "frame.html" . -}}
+                        </div>
+                        {{- partial "typewriter.html" .Params -}}
+                    </li>
+                {{ end }}
             {{ end }}
-        {{ end }}
-    </ul>
-    </section>
+        </ul>
+</main>
 {{ end }}

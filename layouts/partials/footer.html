@@ -1,0 +1,23 @@
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p class="footer-description">{{ .Site.Params.about }}</p>
+        <ul class="social-list">
+            {{ range .Site.Params.socialLinks }}
+                <li><a href="{{ .url }}" target="_blank"><img class="icon" src="/images/social/{{ .icon }}" aria-label="{{.name}}" /></a></li>
+            {{ end }}
+        </ul>
+    </div>
+</footer>
+
+<script>
+// Grab the header element once
+const topBar = document.getElementById('topBar');
+
+ // Listen for scrolling.
+window.addEventListener('scroll', toggleScrolledClass(topBar));
+
+  // Run it once on page load in case the page opens already scrolled
+  // (e.g., when the user refreshes mid‑page).
+toggleScrolledClass(topBar);
+
+</script>

@@ -8,7 +8,4 @@ params:
         - "The feeling in the gut only intensifies"
         - "Asking some questions, feeding on lies"
         - "This shade of blue is gonna break me down"
-    links:
-        - name: "Coming Soon"
-          url: "#"
 ---

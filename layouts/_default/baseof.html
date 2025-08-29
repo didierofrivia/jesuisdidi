@@ -10,7 +10,9 @@
                 <source src="{{ "bg.mp4" | absURL }}" type="video/mp4">
             {{ end }}
             </video>
+            {{- partial "header.html" . -}}
             {{- block "main" . }}{{- end }}
         </div>
+        {{- partial "footer.html" . -}}
     </body>
 </html>

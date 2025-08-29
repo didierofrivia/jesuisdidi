@@ -8,7 +8,4 @@ params:
         - "His royal act brings shame to the town"
         - "Fancies himself as a superhero"
         - "His ego craves its everlasting mirror"
-    links:
-        - name: "Coming Soon"
-          url: "#"
 ---

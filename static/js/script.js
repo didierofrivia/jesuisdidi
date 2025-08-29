@@ -42,3 +42,17 @@ function typeJs(textArray, selector) {
     const typeWriter = createTypewriter(textArray, selector)
     setInterval(typeWriter.write, 120)
 }
+
+// Function that runs on every scroll event.
+function toggleScrolledClass(header) {
+    return function() {
+        console.log(header)
+        // If we’ve moved down at least 1 px, add the class.
+        // Otherwise (exactly at the top) remove it.
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+}

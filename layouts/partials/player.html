@@ -2,7 +2,9 @@
     <div class="imgBx">
         <img class="cover" src="/images/{{ .cover }}" alt="{{ .title }}">
     </div>
+    {{ if .demo }}
     <audio controls>
         <source src="/audio/{{ .demo }}" type="audio/mpeg">
     </audio>
+    {{ end }}
 </div>
