@@ -2,17 +2,17 @@
 <html>
     {{- partial "head.html" . -}}
     <body>
-        <div class='mainbg'>
-            <video autoplay muted loop>
-                {{ if .Site.Params.background }}
+        <video autoplay muted loop playsinline class="bg-video">
+            {{ if .Site.Params.background }}
                 <source src="{{ .Site.Params.background | absURL }}" type="video/mp4">
             {{ else }}
                 <source src="{{ "bg.mp4" | absURL }}" type="video/mp4">
             {{ end }}
-            </video>
+        </video>
+        <div class="page-content">
             {{- partial "header.html" . -}}
             {{- block "main" . }}{{- end }}
+            {{- partial "footer.html" . -}}
         </div>
-        {{- partial "footer.html" . -}}
     </body>
 </html>

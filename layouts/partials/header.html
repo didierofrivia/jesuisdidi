@@ -3,10 +3,12 @@
         <a href="/"><img src="/images/{{ .Site.Params.avatar }}" alt="dd"></a>
     </div>
     <div class="caption">{{ .Site.Params.title }}</div>
-
-    <div class="streaming-links">
+    <nav id="streamNav" class="streaming-links">
         {{ range .Site.Params.streamingLinks }}
             <a href="{{ .url }}" target="_blank">{{ .name }}</a>    
         {{ end }}
-    </div>
+    </nav>
+    <button id="burgerBtn" class="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
 </header>

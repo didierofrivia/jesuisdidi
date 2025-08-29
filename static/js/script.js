@@ -46,7 +46,6 @@ function typeJs(textArray, selector) {
 // Function that runs on every scroll event.
 function toggleScrolledClass(header) {
     return function() {
-        console.log(header)
         // If we’ve moved down at least 1 px, add the class.
         // Otherwise (exactly at the top) remove it.
         if (window.scrollY > 0) {

@@ -20,4 +20,16 @@ window.addEventListener('scroll', toggleScrolledClass(topBar));
   // (e.g., when the user refreshes mid‑page).
 toggleScrolledClass(topBar);
 
+const burger = document.getElementById('burgerBtn');
+const streamNav = document.getElementById('streamNav');
+
+burger.addEventListener('click', ()=>{
+    console.log("click this shit")
+    console.log(streamNav)
+  const isOpen = streamNav.classList.toggle('expanded');
+  if(isOpen) streamNav.classList.remove('collapsed');
+  else streamNav.classList.add('collapsed');
+  burger.setAttribute('aria-expanded', isOpen);
+});
+
 </script>
