@@ -20,4 +20,18 @@ window.addEventListener('scroll', toggleScrolledClass(topBar));
   // (e.g., when the user refreshes mid‑page).
 toggleScrolledClass(topBar);
 
+const toggleBtn = document.getElementById('navToggle');
+const navPanel = document.getElementById('streamNav');
+
+toggleBtn.addEventListener('click', ()=>{
+    console.log("click this shit")
+    console.log(navPanel)
+  const isOpen = navPanel.classList.toggle('expanded');
+  if(isOpen) navPanel.classList.remove('collapsed');
+  else navPanel.classList.add('collapsed');
+  toggleBtn.classList.toggle('open', isOpen);
+  toggleBtn.setAttribute('aria-expanded', isOpen);
+  toggleBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+});
+
 </script>

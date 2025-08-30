@@ -5,6 +5,13 @@
     font-family: "Noto Sans Mono", monospace;
 }
 
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+    background-color: #000;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -20,34 +27,38 @@ h2 {
     color:#ddd
 }
 
-  main {
+.bg-video{
+  position:fixed;
+  top:0; left:0;
+  width:100vw;
+  height:100vh;
+  object-fit:cover;
+  z-index:-1;
+}
+
+main {
     padding: 4rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 2rem;
-  }
-
-
-.mainbg {
-    height: auto;
 }
 
-.mainbg video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    z-index: -1;
+.bg-video::-webkit-media-controls,
+.bg-video::-webkit-media-controls-enclosure,
+.bg-video::-webkit-media-controls-start-playback-button{
+  display:none !important;
 }
 
-.collection, .content {
-    padding-bottom: 5%;
-    padding-top: 8%;
+.page-content{
+  position:relative;
+  z-index:1;
+  text-align:center;
 }
 
 .collection {
     display: grid;
+    padding: 1rem 0;
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
 }
@@ -98,8 +109,8 @@ h2 {
     transition: all .15s ease;
     letter-spacing: .025em;
     text-shadow: 0 0 1px #fff;
-    text-decoration: none; /* Remove default underline on anchor elements */
-    display: inline-block; /* Ensure consistent spacing */
+    text-decoration: none;
+    display: inline-block;
 }
 
 .contentbtn button:hover,
@@ -182,55 +193,77 @@ h2 {
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
     color: #eb598c;
-  }
+}
 
-  /* Container for the streaming‑service icons/links */
-#topBar .streaming-links {
-    display: flex;
+.streaming-links {
+    display: grid;
     gap: 1rem;
-  }
+}
 
-#topBar .streaming-links a {
-    text-decoration: none;
-    /*color: #555;*/
+.streaming-links a {
     font-size: 0.9rem;
-  }
+}
 
-  #topBar .streaming-links a:hover {
+.streaming-links a:hover {
     color: #ddd;
-  }
+}
 
-  #topBar.scrolled {
-    flex-direction:row;           /* horizontal layout */
+#topBar.scrolled {
+    flex-direction:row;
     justify-content:space-between;
     padding:0.4rem 1rem;
     background-color: #000;
-  }
+}
 
-  #topBar.scrolled .avatar{
-    width:45px; height:45px;      /* tiny circle */
+#topBar.scrolled .avatar{
+    width:45px; height:45px;
     margin:0;
-  }
+}
 
-  #topBar.scrolled .caption{
-    font-size:0;                  /* hide caption */
-  }
+#topBar.scrolled .caption{
+    font-size:0;
+}
 
-  #topBar.scrolled .streaming-links{
+#topBar.scrolled .streaming-links{
     margin:0;
-  }
+}
 
-  #topBar.scrolled .streaming-links a{
+#topBar.scrolled .streaming-links a{
     font-size:0.85rem;
-  }
+}
 
-  .site-footer {
+.nav-toggle{
+  display:none;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  position:relative;
+  padding:0;
+  background-image: url("images/open.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition:all .3s, transform .3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.nav-toggle:hover {
+    box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -webkit-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -moz-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+}
+
+.nav-toggle.open {
+    background-image: url("images/close.svg");
+}
+
+.site-footer {
   background:#000;
   padding:2rem;
   font-size:0.95rem;
 }
 
-/* Inner wrapper to keep the width consistent with the rest of the page */
 .footer-inner {
   max-width:960px;
   margin:auto;
@@ -238,7 +271,6 @@ h2 {
   padding: 3em 0;
 }
 
-/* Description / tagline */
 .footer-description {
   margin:0 0 1rem;
   line-height:1.5;
@@ -246,7 +278,6 @@ h2 {
   text-shadow: 0 0 5px #fff;
 }
 
-/* Social‑media list – horizontal, icons only */
 .social-list {
   list-style:none;
   padding:0;
@@ -256,7 +287,6 @@ h2 {
   gap:1.5rem;
 }
 
-/* Links – keep the icons white, enlarge a little on hover */
 .social-list a {
   color:#ddd;
   background-color: #ddd;
@@ -268,7 +298,6 @@ h2 {
   transform:scale(1.1);
 }
 
-/* SVG icons – size and inherit the link color */
 .icon {
   width:24px;
   height:24px;
@@ -277,7 +306,7 @@ h2 {
 /* Responsive */
 @media screen AND (max-width: 700px) {
     .mainbg {
-        /*height: 100vh !important;*/
+        height: 100vh !important;
     }
 
 }
@@ -293,4 +322,35 @@ h2 {
         display: block;
         padding: 0;
     }
+
+    #topBar.scrolled .nav-toggle{
+        display:flex;
+    }
+
+    #topBar.scrolled #streamNav {
+        display:none;
+    }
+
+    #topBar.scrolled #streamNav.expanded{
+        display:flex;
+        flex-direction:column;
+        gap:0.8rem;
+        margin-top:0.8rem;
+        animation:slideDown .25s ease-out forwards;
+    }
+}
+
+@media (min-width:600px){
+  #topBar{
+    flex-direction:column;
+    align-items:center;
+    padding:2rem 0;
+  }
+
+  .streaming-links{display:flex;}      /* always visible on desktop */
+}
+
+@keyframes slideDown{
+  from{opacity:0; transform:translateY(-10px);}
+  to  {opacity:1; transform:translateY(0);}
 }
