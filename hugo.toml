@@ -9,7 +9,7 @@ theme = "glim-midnight"
         {name = "Mastodon", url="https://mastodon.online/@didierofrivia", icon="mastodon.svg"},
     ]
     avatar = "dd-avatar-01.jpeg"
-    about = "A mostly nice human being, attempting to create, while this late age of surveillance capitalism wants to enslave us into consumerism."
+    about = "A mostly nice human being, attempting to create, in this late age of surveillance capitalism."
     streamingLinks = [
         {name = "Tidal", url = "https://tidal.com/browse/artist/51199476"},
         {name = "Spotify", url = "https://open.spotify.com/artist/1N8ts2Tb3LHeXFtlw0Bi3y"},
