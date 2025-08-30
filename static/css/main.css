@@ -195,23 +195,6 @@ main {
     color: #eb598c;
 }
 
-.burger{
-  display:none;
-  flex-direction:column;
-  justify-content:space-around;
-  width:30px;height:24px;
-  background:transparent;
-  border:none;
-  cursor:pointer;
-  padding:0;
-}
-.burger span{
-  display:block;
-  width:100%; height:3px;
-  background:#fff;
-  border-radius:2px;
-}
-
 .streaming-links {
     display: grid;
     gap: 1rem;
@@ -247,6 +230,32 @@ main {
 
 #topBar.scrolled .streaming-links a{
     font-size:0.85rem;
+}
+
+.nav-toggle{
+  display:none;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  position:relative;
+  padding:0;
+  background-image: url("images/open.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition:all .3s, transform .3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.nav-toggle:hover {
+    box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -webkit-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+    -moz-box-shadow: 10px 2px 90px -11px rgba(26, 176, 133, 0.583);
+}
+
+.nav-toggle.open {
+    background-image: url("images/close.svg");
 }
 
 .site-footer {
@@ -314,12 +323,12 @@ main {
         padding: 0;
     }
 
-    #topBar.scrolled .burger{
-        display:flex;                /* show the hamburger */
+    #topBar.scrolled .nav-toggle{
+        display:flex;
     }
 
     #topBar.scrolled #streamNav {
-        display:none;                /* hidden by default */
+        display:none;
     }
 
     #topBar.scrolled #streamNav.expanded{
@@ -337,7 +346,7 @@ main {
     align-items:center;
     padding:2rem 0;
   }
-  .burger{display:none;}               /* never show burger on desktop */
+
   .streaming-links{display:flex;}      /* always visible on desktop */
 }
 
