@@ -4,7 +4,7 @@ params:
     id: "the-fool"
     cover: "singles/the_fool_1000x1000.png"
     demo: "the-fool-demo.mp3"
-    text: "Coming Soon"
+    releaseDate: "2025-10-26"
     phrases:
         - "He wears a crown, but behaves like a clown"
         - "His royal act brings shame to the town"
