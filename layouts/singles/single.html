@@ -5,12 +5,6 @@
                 <h3 class='contentheading'>{{ .Title }}</h3>
                 {{- partial "player.html" .Params -}}
             </div>
-            <div id="single-{{ .Params.id  }}" class='contenttypewritter animatedText'></div>
-            <!-- JS for typewritter -->
-            <script>
-                typeJs({{ .Params.phrases | jsonify | safeJS }}, "#single-{{ .Params.id  }}")
-            </script>
-            <p class="soon">{{ .Params.text }}</p>
             <ul class="contentbtn">
                 {{ range .Params.links }}
                     <li><a href="{{ .url }}" class='btn btn-outline-light' role='button' target="_blank">{{ .name }}</a></li>
