@@ -1,5 +1,6 @@
 <div class="player">
     <div class="imgBx">
+        {{- partial "countdown.html" . -}}
         <img class="cover" src="/images/{{ .cover }}" alt="{{ .title }}">
     </div>
     {{ if .demo }}
