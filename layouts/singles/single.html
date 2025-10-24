@@ -10,6 +10,7 @@
             <script>
                 typeJs({{ .Params.phrases | jsonify | safeJS }}, "#single-{{ .Params.id  }}")
             </script>
+            <p class="soon">{{ .Params.text }}</p>
             <ul class="contentbtn">
                 {{ range .Params.links }}
                     <li><a href="{{ .url }}" class='btn btn-outline-light' role='button' target="_blank">{{ .name }}</a></li>
