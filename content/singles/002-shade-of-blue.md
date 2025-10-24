@@ -4,7 +4,7 @@ params:
     id: "shade-of-blue"
     cover: "singles/shade_of_blue_1000x1000.png"
     demo: "shade-of-blue-demo.mp3"
-    text: "Coming Soon"
+    releaseDate: "2025-11-11"
     phrases:
         - "Asking no questions, hearing no lies"
         - "The feeling in the gut only intensifies"

@@ -1,0 +1,12 @@
+{{ $releaseDate := .releaseDate | time }}
+{{ $diff := $releaseDate.Sub now }}
+{{ if gt $diff.Minutes 0 }}
+<div id="countdown-single-{{ .id  }}" class='countdownBox'>
+    <h4>Coming Soon</h4>
+    <h5 class="countdown"></h5>
+</div>
+<!-- JS for coundown -->
+<script>
+    countdown({{ .releaseDate | jsonify | safeJS }}, "#countdown-single-{{ .id  }} .countdown")
+</script>
+{{ end }}

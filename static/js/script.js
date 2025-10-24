@@ -55,3 +55,31 @@ function toggleScrolledClass(header) {
         }
     }
 }
+
+function createCountdown(dateString, selector) {
+    let countDownDate = new Date(dateString).getTime();
+    let countdownElement = document.querySelector(selector);
+
+    return {
+        countdownStep: function() {
+            let now = new Date().getTime();
+            let distance = countDownDate - now;
+            if (distance < 0) {
+                countdownElement.innerHTML = "";
+            } else {
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+            }
+        }
+    }
+}
+
+function countdown(dateString, selector) {
+    const cd = createCountdown(dateString, selector)
+    setInterval(cd.countdownStep, 1000)
+}
