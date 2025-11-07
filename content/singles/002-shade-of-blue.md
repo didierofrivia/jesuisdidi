@@ -7,6 +7,8 @@ params:
     links:
         - name: "Tidal"
           url: "https://tidal.com/album/471983135/"
+        - name: "Deezer"
+          url: "https://link.deezer.com/s/31xpl8SQ970ddB0oeQu89"
         - name: "Spotify"
           url: "https://open.spotify.com/album/2yil7AtK39vJm2A6NKgvlT"
         - name: "Apple Music"
