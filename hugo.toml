@@ -8,7 +8,7 @@ theme = "glim-midnight"
     socialLinks = [
         {name = "Mastodon", url="https://mastodon.online/@didierofrivia", icon="mastodon.svg"},
     ]
-    avatar = "dd-avatar-01.jpeg"
+    avatar = "dd-avatar-04.jpeg"
     about = "A mostly nice human being, attempting to create, in this late age of surveillance capitalism."
     streamingLinks = [
         {name = "Tidal", url = "https://tidal.com/browse/artist/51199476"},
